@@ -1,0 +1,2 @@
+module display_on_call ( input signed [7:0] n,
+	output reg [7:0] display [0:5]

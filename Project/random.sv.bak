@@ -1,0 +1,6 @@
+module random(output bit [3:0] crh;
+	output bit target [0:5]);
+	
+	
+	
+endmodule

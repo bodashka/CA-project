@@ -1,0 +1,65 @@
+class Position;
+	rand [3:0] crh;
+	rand [5:0] target;
+endclass
+
+module game ( input hit,
+	input check,
+	input clk,
+	output reg [7:0] display [0:5]);
+
+
+	Position pos = new ();
+	reg lastop = 0;
+	integer score, i;
+	
+	byte codes [0:9];
+	codes[0] = 8'b11111100;
+	codes[1] = 8'b01100000;
+	codes[2] = 8'b11011010;
+	codes[3] = 8'b11110010;
+	codes[4] = 8'b01100110;
+	codes[5] = 8'b10110110;
+	codes[6] = 8'b10111110;
+	codes[7] = 8'b01100000;
+	codes[8] = 8'b11111110;
+	codes[9] = 8'b11110110;
+	
+	reg upd = 0;
+	update m0 (.clk(clk), .upd(upd));
+	always @ (posedge upd) begin
+		if (check) begin // game in progress branch
+			if (lastop) begin //change the score only if the last operation was game
+				if (target[pos] ^ hit) begin
+					score <= score - 1;
+				end else begin
+					score <= score + 1;
+				end
+			end
+			pos.randomize();
+			pos.crh = pos.crh % 6;
+			for (i = 0; i < 6; i = i + 1) begin
+				if (pos.target[i] == 1) begin
+					display[i] = 8'b00010000;
+				end else begin 
+					display[i] = 8'b01110000;
+				end
+			end
+			display[pos.crh] = display[pos.crh]^8'b00000001;
+		end else begin // game score check branch
+			integer temp = n;
+			if (n < 0) begin
+				temp = temp * -1;
+				display_on_call[5] = 8'b00000100;
+			end
+			
+			$display("n = %d", n);
+			for (int i = 0; i < 5; i++) begin
+				display[i] = codes[temp%10];
+				temp = temp/10;
+			end
+		end
+		lastop = check;
+	end
+	
+endmodule

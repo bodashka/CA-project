@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at update.v(11): always construct contains both blocking and non-blocking assignments File: /home/user/intelFPGA_lite/21.1/quartus/libraries/others/Project/update.v Line: 11
+Warning (10268): Verilog HDL information at gameSV.sv(87): always construct contains both blocking and non-blocking assignments File: /home/user/intelFPGA_lite/21.1/quartus/libraries/others/Project/gameSV.sv Line: 87

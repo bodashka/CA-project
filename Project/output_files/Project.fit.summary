@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sun Dec 11 22:11:27 2022
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Revision Name : Project
+Top-level Entity Name : gameSV
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 10,652 / 49,760 ( 21 % )
+    Total combinational functions : 10,607 / 49,760 ( 21 % )
+    Dedicated logic registers : 242 / 49,760 ( < 1 % )
+Total registers : 242
+Total pins : 53 / 360 ( 15 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
